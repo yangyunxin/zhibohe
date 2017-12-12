@@ -44,10 +44,8 @@ module.exports = async function () {
 				throw e
 			}
 		}
-
-		//insertRoom()
+		insertRoom()
 	})
-
 
 	// 插入banner数据到数据库
 	const bannerList = await getBannerList()
