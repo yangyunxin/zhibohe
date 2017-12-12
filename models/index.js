@@ -13,10 +13,12 @@ const sequelize = new Sequelize('douyu', 'root', '', {
 })
 
 const Room = sequelize.import('./room.js')
+const Banner = sequelize.import('./banner.js')
 
 // 同步模型到数据库中
 // sequelize.sync()
 
 module.exports = {
-	Room
+	Room,
+	Banner
 }

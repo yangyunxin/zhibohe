@@ -10,4 +10,6 @@ module.exports = async function () {
 	// 获取斗鱼分类列表, 斗鱼首页是ajax请求后的页面，因此返回数据是json
 	let cateResult = await axios.get(`${targetUrl}/category?type=`)
 	let cates = cateResult.data.cate2Info;
+
+	return await cates
 }

@@ -5,14 +5,16 @@ const async = require('async')
 
 const targetUrl = 'https://m.douyu.com'
 const getRoomList = require('./getRoomList')
+const getBannerList = require('./getBanner.js')
 const models = require('../models')
 
 const RoomModel = models.Room
+const Banner = models.Banner
 
-module.exports = function () {
+module.exports = async function () {
+
+	// 插入room数据到数据库
 	getRoomList(function (roomList) {
-
-		// 插入到数据库
 		async function insertRoom() {
 			try {
 				for (let i = 0; i < roomList.length; i++) {
@@ -43,8 +45,23 @@ module.exports = function () {
 			}
 		}
 
-		insertRoom().then(function () {
-
-		})
+		//insertRoom()
 	})
+
+
+	// 插入banner数据到数据库
+	const bannerList = await getBannerList()
+	console.log(bannerList)
+	try {
+		for (let i = 0; i < bannerList.length; i++) {
+			let banner = await Banner.create({
+				id: bannerList[i].id,
+	            title: bannerList[i].title,
+	            pic_url: bannerList[i].pic_url,
+			})
+		}
+	} catch (e) {
+		console.log(e)
+		throw e
+	}
 }
