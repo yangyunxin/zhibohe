@@ -35,6 +35,8 @@ module.exports = async function (cb) {
 		// 得到最终房间数组
 		let roomList = Array.prototype.concat.apply([], results)
 
+		// 保存图片
+
 		cb(roomList)
 	})
 }

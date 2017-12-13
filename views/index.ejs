@@ -1,6 +1,6 @@
 <?- include('./common/head') -?>
-	<?- include('./common/right_slide') -?>
-	<?- include('./common/fix_head') -?>
+<?- include('./common/right_slide') -?>
+<?- include('./common/fix_head') -?>
 
     <!--中间主题内容-->
 	<div class="content panel" id="panel">
@@ -8,24 +8,22 @@
         <div class="banner">
             <div class="slide">
                 <ul>
+                <? bannerList.forEach(function (banner, key) { ?>
                     <li>
-                        <a href="/anchor.html"><img data-src="/public/images/swiper.jpg" src="/public/images/swiper.jpg" alt=""></a>
+                        <a href="/<?= banner.id ?>"><img data-src="<?= banner.pic_url ?>" src="/public/images/swiper.jpg" alt=""></a>
                     </li>
-                    <li>
-                        <a href="//m.yhd.com/"><img src="http://d10.yihaodianimg.com/V00/M03/4D/41/CgQDsVQG4d6AISZPAAFa7N3KyPY18100.jpg" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="//www.baidu.com/"><img src="http://d10.yihaodianimg.com/V00/M04/32/59/CgQDsVQDEtaAVv4BAAEFc6n3fws75000.jpg" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="//m.taobao.com/"><img src="http://d11.yihaodianimg.com/N05/M04/82/EC/CgQI01QEHoiAFBbgAAC9du5zOPc62900.jpg" alt=""></a>
-                    </li>
+
+                <? }) ?>
+                   
                 </ul>
                 <div class="dot">
-                    <span class="cur"></span>
-                    <span class=""></span>
-                    <span class=""></span>
-                    <span class=""></span>
+                <? bannerList.forEach(function (banner, key) { ?>
+                    <? if (key === 0) { ?>
+                        <span class="cur"></span>
+                    <? } else { ?>
+                        <span class=""></span>
+                    <? } ?>
+                <? }) ?> 
                 </div>
             </div>
         </div>
@@ -40,8 +38,9 @@
                 </a>
             </h2>
             <ul class="hot-rank-list clr">
+            <? roomTop.forEach(function (room) { ?>
                 <li>
-                    <a href="/anchor.html">
+                    <a href="/<?= room.room_id ?>">
                         <img src="/public/images/avatar.png" alt="七凯丽">
                         <h6>七凯丽</h6>
                         <p>
@@ -52,6 +51,8 @@
                         </div>
                     </a>
                 </li>
+            <? }) ?>
+                
                 <li>
                     <a href="#">
                         <img src="/public/images/avatar.png" alt="七凯丽">

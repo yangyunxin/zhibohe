@@ -9,7 +9,7 @@ const getBannerList = require('./getBanner.js')
 const models = require('../models')
 
 const RoomModel = models.Room
-const Banner = models.Banner
+const BannerModel = models.Banner
 
 module.exports = async function () {
 
@@ -52,7 +52,7 @@ module.exports = async function () {
 	console.log(bannerList)
 	try {
 		for (let i = 0; i < bannerList.length; i++) {
-			let banner = await Banner.create({
+			let banner = await BannerModel.create({
 				id: bannerList[i].id,
 	            title: bannerList[i].title,
 	            pic_url: bannerList[i].pic_url,
