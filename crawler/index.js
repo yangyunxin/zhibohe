@@ -38,7 +38,7 @@ module.exports = async function () {
 		})
 	}
 
-	// // 插入banner数据到数据库
+	// 插入banner数据到数据库
 	const bannerList = await getBannerList()
 	for (let i = 0; i < bannerList.length; i++) {
 		let banner = await BannerModel.create({

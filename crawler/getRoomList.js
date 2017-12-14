@@ -29,7 +29,6 @@ module.exports = async function () {
 			})
 			concurrencyCount--;
 			return roomlist.data.result
-			
 		}, (err, results) => {
 			if (err) {
 				err.content = '获取出错'
