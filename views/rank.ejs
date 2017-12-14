@@ -1,0 +1,52 @@
+<?- include('./common/head') -?>
+<div class="fix-header">
+		<a class="turn-back" href="/"></a>
+		<span>主播热度排行榜</span>
+	</div>
+	<div class="mainbody">
+		<div class="anchor-rank-list">
+			<div class="rank-hd clr">
+				<span class="rank-num">排名</span>
+				<span class="rank-anchor">主播</span>
+				<span class="rank-hot">当前热度</span>
+			</div>
+			<ul class="rank-bd">
+			<? roomTop.forEach(function (room, k) { ?>
+				<li>
+					<a href="/<?= room.room_id ?>">
+						<div class="rank-item-top clr">
+							<div class="rank-num num<?= k+1 ?>">
+								<span><?if(k+1 < 10){?>0<?}?><?=k+1?></span>
+							</div>
+							<div class="rank-anchor">
+								<img src="<?= room.avatar ?>" alt="">
+								<strong><?= room.nickname ?></strong>
+							</div>
+							<div class="rank-tem">
+								<span><?= room.online ?>℃</span>
+							</div>
+							<div class="rank-contr">
+								<span></span>
+							</div>
+						</div>
+						<div class="rank-item-bottom none">
+							<div class="rank-empty"></div>
+							<div class="rank-origin">
+								<p>平台：斗鱼</p>
+								<p>状态：正在直播</p>
+							</div>
+							<div class="rank-anchor-cate">
+								<p>分类：英雄联盟</p>
+								<p>839396<i></i></p>
+							</div>
+						</div>
+					</a>
+				</li>
+			<? }) ?>
+				
+			</ul>
+			<div class="load-more">查看更多...</div>
+		</div>
+	</div>
+
+<?- include('./common/foot') -?>

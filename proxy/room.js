@@ -8,9 +8,9 @@ const RoomModel = models.Room
  */
 exports.getTopRoom = async function (num) {
 	let roomTop = await RoomModel.findAll({
-		attributes: ['online', 'room_id', 'nickname', 'avatar'],
+		attributes: ['online', 'room_id', 'nickname', 'avatar', 'status'],
 		limit: num,
-		// order: ['online', 'DESC']
+		order: [['online', 'DESC']]
 	})
 	return roomTop
 }
