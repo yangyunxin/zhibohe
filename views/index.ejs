@@ -38,63 +38,20 @@
                 </a>
             </h2>
             <ul class="hot-rank-list clr">
-            <? roomTop.forEach(function (room) { ?>
+            <? roomTop.forEach(function (room, k) { ?>
                 <li>
                     <a href="/<?= room.room_id ?>">
-                        <img src="/public/images/avatar.png" alt="七凯丽">
-                        <h6>七凯丽</h6>
+                        <img src="<?= room.avatar ?>" alt="<?= room.nickname ?>">
+                        <h6><?= room.nickname ?></h6>
                         <p>
                             <i>
-                            </i>233.58℃</p>
+                            </i><?= room.online ?>℃</p>
                         <div class="rank-num">
-                            <b>1</b>
+                            <b><?= k+1 ?></b>
                         </div>
                     </a>
                 </li>
-            <? }) ?>
-                
-                <li>
-                    <a href="#">
-                        <img src="/public/images/avatar.png" alt="七凯丽">
-                        <h6>七凯丽</h6>
-                        <p>
-                            <i>
-                            </i>233.58℃</p>
-                        <div class="rank-num">
-                            <b>2</b>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="/public/images/avatar.png" alt="七凯丽">
-                        <h6>七凯丽</h6>
-                        <p>
-                            <i>
-                            </i>233.58℃</p>
-                        <div class="rank-num">
-                            <b>3</b>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="/public/images/avatar.png" alt="七凯丽">
-                        <h6>七凯丽</h6>
-                        <p>
-                            <i>
-                            </i>233.58℃</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="/public/images/avatar.png" alt="七凯丽">
-                        <h6>七凯丽</h6>
-                        <p>
-                            <i>
-                            </i>233.58℃</p>
-                    </a>
-                </li>
+            <? }) ?>  
             </ul>
         </div>
         <!--正在热播-->

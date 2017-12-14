@@ -12,8 +12,6 @@ var users = require('./routes/users');
 
 var app = express();
 
-// 开始抓取斗鱼数据
-// require('./crawer')()
 //use ejs-locals
 // app.engine('ejs', engine);
 

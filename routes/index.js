@@ -8,9 +8,9 @@ const Room = require('../proxy/room')
 router.get('/', function(req, res, next) {
 	(async () => {
 		// TODO 目前基发 改成并发
-		let bannerList = Banner.getBanner()
+		let bannerList = await Banner.getBanner()
 
-		let roomTop = Room.getTopRoom(10)
+		let roomTop = await Room.getTopRoom(10)
 
 		return {
 			bannerList,

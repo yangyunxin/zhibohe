@@ -7,6 +7,4 @@ const BannerModel = models.Banner
 exports.getBanner = async function () {
 	let bannerList = await BannerModel.findAll({attributes: ['id', 'pic_url']})
 	return bannerList
-
-	
 }
