@@ -1,20 +1,25 @@
 <!--右侧分类-->
-        <div class="right-slide"  id="menu">
-            <!--右侧头部菜单-->
-            <div class="cate-tab">
-                <ul class="clr">
-                    <li class="cur">
-                        <a href="#">全部</a></li>
-                    <li>
-                        <a href="#">热门游戏</a></li>
-                    <li>
-                        <a href="#">王者荣耀</a></li>
-                    
-                </ul>
-            </div>
-            <!--右侧分类列表-->
-            <div class="cate-list">
-                <ul class="clr">
-       </ul>
-            </div>
-        </div>
+<div class="right-slide"  id="menu">
+    <!--右侧头部菜单-->
+    <div class="cate-tab">
+        <ul class="clr">
+        <li class="cur" data-id="0"><a href="javascript:;">全部</a></li>
+        <? cate1.forEach(function (cate, k) { ?>
+            <li data-id="<?= cate.cate1Id ?>"><a href="javascript"><?= cate.cate1Name ?></a></li>
+        <? }) ?>
+        </ul>
+    </div>
+    <!--右侧分类列表-->
+    <div class="cate-list">
+        <ul class="clr">
+            <? cate2.forEach(function (cateItem, k) { ?>
+            <li class="pid<?= cateItem.cate1Id ?>" style="border-right: 1px dashed rgb(207, 207, 207);">
+                <a href="/roomlist/<?= cateItem.shorName ?>">
+                    <img class="lazy" data-original="<?= cateItem.pic ?>" src="/public/images/avator-default.png" alt="">
+                    <p><?= cateItem.cate2Name ?></p>
+                </a>
+            </li>
+          <? }) ?>  
+        </ul>
+    </div>
+</div>

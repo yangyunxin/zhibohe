@@ -33,7 +33,7 @@
                 <strong>
                     <i>
                     </i>热播排行榜</strong>
-                <a href="/rank">查看全部
+                <a href="/rank">
                     <b>></b>
                 </a>
             </h2>
@@ -56,86 +56,34 @@
         </div>
         <!--正在热播-->
         <div class="row hot-now">
-            <h2 class="clr">
-                <strong>
-                    <i>
-                    </i>正在热播</strong>
-                <a href="#">查看全部
-                    <b>>></b>
-                </a>
-            </h2>
-            <!--英雄联盟-->
+            <? mixList.forEach(function (mixRoom) { ?>
             <div class="row-item yxlm">
                 <h4 class="clr">
-                    <span>英雄联盟</span>
-                    <a href="#">></a></h4>
+                    <span><?= mixRoom.tagName ?></span>
+                    <a href="#">></a>
+                </h4>
                 <ul class="clr">
+                <? mixRoom.data.forEach(function (mixRoomItem) { ?>
                     <li>
                         <a href="#">
-                            <img src="/public/images/item.jpg" alt="英雄联盟">
-                            <h5>德杯淘汰赛 RW vs Snake</h5>
+                            <img src="<?= mixRoomItem.room_src ?>" alt="<?= mixRoomItem.nickname ?>">
+                            <h5><?= mixRoomItem.room_name ?></h5>
                             <p class="clr">
                                 <span class="anchor-name">
                                     <i>
-                                    </i>德玛西亚杯官方</span>
+                                    </i><?= mixRoomItem.nickname ?>
+                                </span>
                                 <span class="hot-num">
                                     <i>
-                                    </i>233.58℃</span>
+                                    </i><?= mixRoomItem.online?>
+                                </span>
                             </p>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img src="/public/images/item.jpg" alt="英雄联盟">
-                            <h5>德杯淘汰赛 RW vs Snake</h5>
-                            <p class="clr">
-                                <span class="anchor-name">
-                                    <i>
-                                    </i>德玛西亚杯官方</span>
-                                <span class="hot-num">
-                                    <i>
-                                    </i>233.58℃</span>
-                            </p>
-                        </a>
-                    </li>
+                <? }) ?>
                 </ul>
             </div>
-            <!--王者荣耀-->
-            <div class="row-item wzry">
-                <h4 class="clr">
-                    <span>英雄联盟</span>
-                    <a href="#">></a></h4>
-                <ul class="clr">
-                    <li>
-                        <a href="#">
-                            <img src="/public/images/item.jpg" alt="英雄联盟">
-                            <h5>德杯淘汰赛 RW vs Snake</h5>
-                            <p class="clr">
-                                <span class="anchor-name">
-                                    <i>
-                                    </i>德玛西亚杯官方</span>
-                                <span class="hot-num">
-                                    <i>
-                                    </i>233.58℃</span>
-                            </p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/public/images/item.jpg" alt="英雄联盟">
-                            <h5>德杯淘汰赛 RW vs Snake</h5>
-                            <p class="clr">
-                                <span class="anchor-name">
-                                    <i>
-                                    </i>德玛西亚杯官方</span>
-                                <span class="hot-num">
-                                    <i>
-                                    </i>233.58℃</span>
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+           <? }) ?>
         </div>
         <!--公告-->
         <div class="notice-row">

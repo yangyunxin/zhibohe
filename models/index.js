@@ -18,7 +18,7 @@ const Cate1 = sequelize.import('./cate1.js')
 const Cate2 = sequelize.import('./cate2.js')
 
 // 同步模型到数据库中
-sequelize.sync()
+// sequelize.sync()
 
 module.exports = {
 	Room,

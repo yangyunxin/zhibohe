@@ -237,6 +237,11 @@ $(function(){
 				$(this).css("border-right", "0");
 			}
 		});
+		$("img.lazy").lazyload({
+			threshold : 200,
+			effect : "fadeIn",
+			skip_invisible : true
+		});
 	});
 
 	//右侧顶部菜单
