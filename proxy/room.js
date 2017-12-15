@@ -7,12 +7,12 @@ const RoomModel = models.Room
  * @return array 房间数组
  */
 exports.getTopRoom = async function (num) {
-	let roomTop = await RoomModel.findAll({
-		attributes: ['online', 'room_id', 'nickname', 'avatar', 'status'],
-		limit: num,
-		order: [['online', 'DESC']]
-	})
-	return roomTop
+    let roomTop = await RoomModel.findAll({
+        attributes: ['online', 'room_id', 'nickname', 'avatar', 'status'],
+        limit: num,
+        order: [['online', 'DESC']]
+    })
+    return roomTop
 }
 
 /**
@@ -23,12 +23,12 @@ exports.getTopRoom = async function (num) {
  * @return array 房间数组
  */
 exports.getCateRoom = async function (type, typename, num) {
-	let condition = {}
-	condition[type] = typename
-	console.log(condition)
-	let rooms = await RoomModel.findAll({
-		limit: num,
-		where: condition
-	})
-	return rooms
+    let condition = {}
+    condition[type] = typename
+    console.log(condition)
+    let rooms = await RoomModel.findAll({
+        limit: num,
+        where: condition
+    })
+    return rooms
 }
