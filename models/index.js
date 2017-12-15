@@ -14,11 +14,15 @@ const sequelize = new Sequelize('douyu', 'root', '', {
 
 const Room = sequelize.import('./room.js')
 const Banner = sequelize.import('./banner.js')
+const Cate1 = sequelize.import('./cate1.js')
+const Cate2 = sequelize.import('./cate2.js')
 
 // 同步模型到数据库中
-// sequelize.sync()
+sequelize.sync()
 
 module.exports = {
 	Room,
-	Banner
+	Banner,
+	Cate1,
+	Cate2
 }

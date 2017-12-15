@@ -6,11 +6,13 @@ const async = require('async')
 const targetUrl = 'https://m.douyu.com'
 const getRoomList = require('./getRoomList')
 const getBannerList = require('./getBanner.js')
+const getCateList = require('./getCate.js')
 const models = require('../models')
 
 const RoomModel = models.Room
 const BannerModel = models.Banner
-	
+const Cate2Model = models.Cate2
+const Cate1Model = models.Cate1
 
 module.exports = async function () {
 	// 继发插入room数据到数据库
@@ -47,4 +49,30 @@ module.exports = async function () {
             pic_url: bannerList[i].pic_url,
 		})
 	}
+
+    const cateList = await getCateList()
+    // 插入类型2
+    for (let i = 0; i < cateList.cate2Info.length; i++) {
+        let cateInfo = cateList.cate2Info[i]
+        Cate2Model.create({
+            cate1Id: cateInfo.cate1Id,
+            cate2Id: cateInfo.cate2Id,
+            count: cateInfo.count,
+            cate2Name: cateInfo.cate2Name,
+            icon: cateInfo.icon,
+            pic: cateInfo.pic,
+            shortName: cateInfo.shortName,
+            smallIcon: cateInfo.smallIcon,
+        })
+    }
+
+    // 插入类型1
+    for (let i = 0; i < cateList.cate1Info.length; i++) {
+        let cateInfo = cateList.cate1Info[i]
+        Cate1Model.create({
+            cate1Id: cateInfo.cate1Id,
+            cate1Name: cateInfo.cate1Name,
+            shortName: cateInfo.shortName,
+        })
+    }
 }
