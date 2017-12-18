@@ -16,37 +16,36 @@ exports.index = async (req, res, next) => {
 
 		// 获取最热数据 
 		let hotRooms = await Room.getCateRoom('cate2_id', '174', 4)
-		console.log(hotRooms)
 		mixList.push({
 			tagName: cate2.find((n) => n.cate2Id === '174').cate2Name,
-			data: hotRooms
+			data: hotRooms,
+			shortName: cate2.find((n) => n.cate2Id === '174').shortName,
 		})
 
 		// 获取正在直播
 		let nowRooms = await Room.getCateRoom('cate2_id', '270', 4)
-		console.log(nowRooms)
 		mixList.push({
 			tagName: cate2.find((n) => n.cate2Id === '270').cate2Name,
-			data: nowRooms
+			data: nowRooms,
+			shortName: cate2.find((n) => n.cate2Id === '270').shortName,
 		})
 
 		// 获取颜值
 		let yzRooms = await Room.getCateRoom('cate1_id', '8', 4)
-		console.log(yzRooms)
 		mixList.push({
 			tagName: cate1.find((n) => n.cate1Id === '8').cate1Name,
-			data: yzRooms
+			data: yzRooms,
+			shortName: cate2.find((n) => n.cate1Id === '8').shortName,
 		})
 
 		// 获取王者荣耀
 		let wzryRooms = await Room.getCateRoom('cate1_id', '14', 4)
-		console.log(wzryRooms)
 		mixList.push({
 			tagName: cate1.find((n) => n.cate1Id === '14').cate1Name,
-			data: wzryRooms
+			data: wzryRooms,
+			shortName: cate2.find((n) => n.cate1Id === '14').shortName,
 		})
 
-		console.log(mixList)
 		res.render('index', { 
 			bannerList,
 			roomTop,

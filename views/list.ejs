@@ -1,0 +1,39 @@
+<?- include('./common/head') -?>
+<?- include('./common/right_slide') -?>
+<!--固定头部-->
+<div class="header list-header">
+	<strong class="list-cate"><i></i><span>热门游戏</span></strong>
+	<span class="list-name">英雄联盟</span>
+	<a id="side-trigger" class="cate-icon" href="javascript:;"></a>
+</div>
+<!--中间主题内容-->
+<div class="content panel list-content" id="panel">
+	<div class="mainbody">
+		<!--英雄联盟-->
+		<div class="row-item">
+			<ul class="clr">
+			<? cateRooms.forEach(function () { ?>
+				<li>
+					<a href="#">
+						<img src="/public/images/item.jpg" alt="英雄联盟">
+						<h5>德杯淘汰赛 RW vs Snake</h5>
+						<p class="clr">
+							<span class="anchor-name">
+								<i></i>
+								德玛西亚杯官方
+							</span>
+							<span class="hot-num">
+								<i></i>
+								233.58℃
+							</span>
+						</p>
+					</a>
+				</li>
+			<? }) ?>
+			</ul>
+			<a class="load-more" href="javascript:;">加载更多...</a>
+		</div>	
+	</div>
+</div>
+
+<?- include('./common/foot') -?>
